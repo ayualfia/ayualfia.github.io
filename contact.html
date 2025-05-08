@@ -127,58 +127,70 @@
                 </div>
             </div>
         </footer>
+        <!-- Footer-->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0">Copyright &copy; Your Website 2023</div></div>
+                    <div class="col-auto">
+                        <a class="small" href="#!">Privacy</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small" href="#!">Terms</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-        <script>
-            function validateAstraFull() {
-                const fields = [
-                { id: 'nama', name: 'Nama' },
-                { id: 'kategori', name: 'Kategori' },
-                { id: 'email', name: 'Email' },
-                { id: 'telepon', name: 'Telepon' },
-                { id: 'pekerjaan', name: 'Pekerjaan' },
-                { id: 'perusahaan', name: 'Perusahaan' },
-                { id: 'kota', name: 'Kota' },
-                { id: 'negara', name: 'Negara' },
-                { id: 'subyek', name: 'Subyek' },
-                { id: 'pesan', name: 'Pesan' }
-                ];
-        
-                for (let field of fields) {
-                const el = document.getElementById(field.id);
-                if (!el.value.trim()) {
-                    Swal.fire("Kesalahan", `${field.name} harus diisi!`, "error");
-                    el.focus();
-                    return false;
-                }
-                }
-        
-                // Contoh validasi email sederhana
-                const email = document.getElementById("email").value;
-                const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-                if (!email.match(emailPattern)) {
-                Swal.fire("Kesalahan", "Format email tidak valid!", "error");
-                document.getElementById("email").focus();
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function validateAstraFull() {
+            const fields = [
+            { id: 'nama', name: 'Nama' },
+            { id: 'kategori', name: 'Kategori' },
+            { id: 'email', name: 'Email' },
+            { id: 'telepon', name: 'Telepon' },
+            { id: 'pekerjaan', name: 'Pekerjaan' },
+            { id: 'perusahaan', name: 'Perusahaan' },
+            { id: 'kota', name: 'Kota' },
+            { id: 'negara', name: 'Negara' },
+            { id: 'subyek', name: 'Subyek' },
+            { id: 'pesan', name: 'Pesan' }
+            ];
+
+            for (let field of fields) {
+            const el = document.getElementById(field.id);
+            if (!el.value.trim()) {
+                Swal.fire("Kesalahan", `${field.name} harus diisi!`, "error");
+                el.focus();
                 return false;
-                }
-        
-                // Nomor telepon harus angka
-                const telepon = document.getElementById("telepon").value;
-                if (isNaN(telepon)) {
-                Swal.fire("Kesalahan", "Telepon harus berupa angka!", "error");
-                document.getElementById("telepon").focus();
-                return false;
-                }
-        
-                return true;
             }
-            </script>
+            }
+
+            // Contoh validasi email sederhana
+            const email = document.getElementById("email").value;
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+            Swal.fire("Kesalahan", "Format email tidak valid!", "error");
+            document.getElementById("email").focus();
+            return false;
+            }
+
+            // Nomor telepon harus angka
+            const telepon = document.getElementById("telepon").value;
+            if (isNaN(telepon)) {
+            Swal.fire("Kesalahan", "Telepon harus berupa angka!", "error");
+            document.getElementById("telepon").focus();
+            return false;
+            }
+
+            return true;
+        }
+        </script>
     </body>
 </html>
